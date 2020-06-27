@@ -5,12 +5,18 @@ import env from './env.config';
 import database from './database';
 
 import typeDefs from './typeDefs';
+import models from './models';
+import resolvers from './resolvers';
 
 const app = express();
 
 app.use(cors());
 
-const server = new ApolloServer({typeDefs, resolvers: {}});
+const server = new ApolloServer({
+	typeDefs, 
+	resolvers,
+	context: {Category: models.Category, Post: models.Post}
+});
 server.applyMiddleware({app});
 
 database()

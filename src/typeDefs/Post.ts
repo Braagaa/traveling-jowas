@@ -1,7 +1,7 @@
 import {gql} from 'apollo-server-express';
 
 const postArgs = `
-	status: String!
+	status: String
 	tags: [String]
 	categories: [String]
 	featuredImage: ImageInput
@@ -12,6 +12,7 @@ const postArgs = `
 
 export default gql`
 	extend type Query {
+		posts: [Post]
 		post(id: String!): Post
 	}
 
@@ -36,6 +37,7 @@ export default gql`
 	}
 
 	type Post {
+		id: ID!
 		title: String!
 		date: Date!
 		status: String!

@@ -5,6 +5,11 @@ import categoryTypes from './Category';
 import postTypes from './Post';
 import imageTypes from './Image';
 
+export type U = undefined;
+export interface ID {
+	id: string;
+}
+
 const baseTypes = gql`
 	type Query {
 		_: Boolean
