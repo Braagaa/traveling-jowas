@@ -1,0 +1,17 @@
+@use '../base/mixins';
+@use '../base/colors'
+
+.header {
+	@include mixins.container(100%, 6.4rem);
+	background-color: colors.$white;
+	box-shadow: 0 4px 10px -10px rgba(0, 0, 0, 0.6);
+	will-change: background, box-shadow;
+	position: fixed;
+	display: block;
+
+	&-inner {
+		width: 100%;
+		@include mixins.trdl(padding, $l: 2rem, $r: 2rem);
+		@include mixins.flex($ai: center);
+	}
+}

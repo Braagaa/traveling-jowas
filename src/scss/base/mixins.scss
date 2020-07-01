@@ -1,0 +1,31 @@
+@mixin container($width, $height) {
+	width: $width;
+	height: $height;
+}
+
+@mixin trdl($prop, $t: null, $r: null, $b: null, $l: null) {
+	$dirs: (top $t, right $r, bottom $b, left $l);
+
+	@each $dir, $val in $dirs {
+		@if $val {
+			#{$prop}-#{$dir}: $val;
+		}
+	}
+}
+
+@mixin flex($ai: null, $jc: null) {
+	$props: (align-items $ai, justify-content $jc);
+	display: flex;
+	
+	@each $p, $v in $props {
+		@if $v {
+			#{$p}: #{$v};
+		}
+	}
+}
+
+@mixin center() {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
