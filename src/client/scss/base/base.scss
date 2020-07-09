@@ -1,0 +1,27 @@
+@use './vars';
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	height: 100%;
+	font-family: vars.$roboto;
+	font-size: 1rem;
+	letter-spacing: 1px;
+}
+
+ul {
+	margin: 0;
+	padding: 0;
+}
+
+li {
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}
+
+a {
+	text-decoration: none;
+}

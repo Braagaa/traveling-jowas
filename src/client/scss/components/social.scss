@@ -1,0 +1,30 @@
+@use '../base/vars';
+@use '../base/mixins';
+@use '../base/colors';
+
+.social {
+	display: none;
+
+	@include mixins.breakpoint('medium') {
+		display: inline-block;
+	};
+
+	li {
+		display: inline-block;
+	}
+
+	@include mixins.excludeFirst(li) {
+		margin-left: 0.6rem;
+	}
+
+	a {
+		@include mixins.container(1.3rem, 1.3rem);
+		display: block;
+		position: relative;
+	}
+
+	svg:hover {
+		transition: fill ease-out 0.2s;
+		fill: colors.$main-color;
+	}
+}

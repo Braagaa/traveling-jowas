@@ -3,14 +3,15 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
 	entry: {
-		app: "./src/js/index.ts"
+		app: "./src/client/js/index.tsx",
+		vendor: ["react", "react-dom"]
 	},
 	resolve: {
-		extensions: [".ts", '.js']
+		extensions: [".ts", '.tsx', '.js']
 	},
 	plugins: [
 		new HtmlWebpackPlugin({
-			template: './src/views/index.pug'
+			template: './src/server/views/index.pug'
 		})
 	],
 	module: {
@@ -18,11 +19,21 @@ module.exports = {
 			{
 				test: /\.ts(x?)$/,
 				exclude: /node_modules/,
-				use: [{loader: "ts-loader"}]
+				use: [{
+					loader: "ts-loader",
+					options: {
+						configFile: 'tsconfig.client.json',
+						onlyCompileBundledFiles: true
+					}
+				}]
 			},
 			{
 				test: /\.pug$/,
 				use: ['pug-loader']
+			},
+			{
+				test: /\.svg$/,
+				use: ['@svgr/webpack']
 			}
 		]
 	},

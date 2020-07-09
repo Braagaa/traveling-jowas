@@ -14,7 +14,9 @@ const app = express();
 
 app.set('view engine', 'pug');
 app.set('views', join(__dirname, 'views'));
+
 app.use(cors());
+app.use('/assets', express.static(join(__dirname, 'assets')));
 
 const server = new ApolloServer({
 	typeDefs, 

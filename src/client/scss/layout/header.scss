@@ -1,0 +1,36 @@
+@use '../base/mixins';
+@use '../base/colors';
+@use '../base/vars';
+
+%center {
+	display: flex;
+	align-items: center;
+}
+
+.header {
+	@include mixins.container(100%, vars.$header-height, colors.$white);
+	@include mixins.position(fixed, $t: 0, $l: 0);
+	display: block;
+	box-shadow: 0 4px 10px -10px rgba(0, 0, 0, 0.6);
+	will-change: background, box-shadow;
+	z-index: 100;
+
+	&-inner {
+		@extend %center;
+		@include mixins.container(100%, 100%);
+		padding: 0 1rem;
+		justify-content: space-between;
+
+		@include mixins.breakpoint('medium') {
+			padding: 0 3rem;
+		}
+
+		@include mixins.breakpoint('x-large') {
+			justify-content: space-evenly;
+		}
+	}
+
+	&-section {
+		@extend %center;
+	}
+}

@@ -13,7 +13,8 @@ module.exports = merge(common, {
 		hot: true,
 		open: true,
 		proxy: {
-			'/graphql': 'http://localhost:3000'
+			'/graphql': 'http://localhost:3000',
+			'/assets': 'http://localhost:3000'
 		}
 	},
 	module: {

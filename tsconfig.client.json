@@ -1,0 +1,11 @@
+{
+	"includes": ["src/client/js/custom.d.ts"],
+	"compilerOptions": {
+		"sourceMap": true,
+		"strict": true,
+		"target": "es5",
+		"module": "esnext",
+		"jsx": "react",
+		"esModuleInterop": true, 
+	}
+}
