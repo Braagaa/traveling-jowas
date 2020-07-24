@@ -1,7 +1,18 @@
 @use 'base/base';
+
+@use 'components/utility';
 @use 'components/logo';
 @use 'components/social';
 @use 'components/hamburger';
 @use 'components/mobile_nav';
 @use 'components/nav';
+@use 'components/hero';
+@use 'components/feed';
+@use 'components/destinations';
+@use 'components/listings';
+@use 'components/buttons';
+
 @use 'layout/header';
+@use 'layout/posts';
+@use 'layout/footer';
+@use 'layout/landing';

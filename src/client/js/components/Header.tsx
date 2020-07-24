@@ -16,13 +16,11 @@ const Header = function() {
 							<a href="/">
 								<img 
 									className="logo-image"
-									src="/assets/images/logo.webp" 
+									src="/assets/images/logo_word_green.jpg" 
 									alt="Logo for Traveling Jowas blog"
 								/>	
 							</a>
 						</div>
-					</div>
-					<div className="header-section">
 						<Nav/>
 					</div>
 					<div className="header-section">

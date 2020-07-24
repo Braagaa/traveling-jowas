@@ -4,7 +4,7 @@ import PATHS from '../data/paths';
 
 const createItem = function([text, path]: string[]) {
 	return (
-		<li>
+		<li key={`nav-${text}`}>
 			<a href={path}>{text}</a>
 		</li>
 	);

@@ -3,17 +3,16 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
 	entry: {
-		app: "./src/client/js/index.tsx",
+		app: ["./src/client/js/header.tsx"],
+		listings: [
+			'./src/client/js/header.tsx', 
+			'./src/client/js/listings.tsx'
+		],
 		vendor: ["react", "react-dom"]
 	},
 	resolve: {
 		extensions: [".ts", '.tsx', '.js']
 	},
-	plugins: [
-		new HtmlWebpackPlugin({
-			template: './src/server/views/index.pug'
-		})
-	],
 	module: {
 		rules: [
 			{

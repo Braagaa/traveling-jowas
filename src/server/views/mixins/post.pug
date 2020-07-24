@@ -1,0 +1,10 @@
+mixin post(href, src, title, text, date)
+	li.posts-item
+		a(href=href)
+			div.post-image
+				img(src="/assets/images/" + src)
+			div.post-content
+				h4.post-content-title= title
+				p.post-content-text= text
+				div.post-content-date
+					span= date

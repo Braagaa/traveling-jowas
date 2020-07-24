@@ -1,0 +1,97 @@
+@use '../base/colors';
+@use '../base/mixins';
+@use '../base/placeholders';
+
+.posts {
+	&-title {
+		text-align: center;
+		text-transform: uppercase;
+		font-weight: 100;
+		color: colors.$black-text;
+	}
+
+	&-inner {
+		@extend %inner;
+	}
+
+	&-wrap {
+		@include mixins.breakpoint('x-large') {
+			margin: 0 auto;
+			width: calc(99.9% * 5/6 - 0.333333333333333rem);
+		}
+	}
+
+	&-list {
+		display: grid;
+		grid-template-columns: 1fr;
+		grid-row-gap: 2rem;
+		@extend %WH100auto;
+
+		@include mixins.breakpoint('large') {
+			grid-template-columns: repeat(2, 1fr);
+			grid-gap: 3rem 1rem;
+		}
+
+		@include mixins.breakpoint('x-large') {
+			justify-content: center;
+			grid-template-columns: repeat(3, minmax(auto, 362px));
+		}
+	}
+
+	&-item {
+		width: 100%;
+		box-shadow: 0px 16px 12px -6px rgba(205,205,205,1);
+
+		@include mixins.breakpoint('x-large') {
+			box-shadow: none;
+		}
+	}
+
+	&-image {
+		position: relative;
+		display: block;
+		margin-bottom: 10px;
+	}
+}
+
+.post{
+	&-image {
+		position: relative;
+		display: block;
+		margin-bottom: 10px;
+
+		@include mixins.beforeImage(75%);
+
+		img {
+			@extend %fullFill;
+			object-fit: cover;
+		}
+	}
+
+	&-content {
+		%_share {
+			margin-top: 16px;
+		}
+
+		padding: 18px;
+		color: colors.$black-text;
+		
+		&-title {
+			color: colors.$main-color;
+		}
+
+		&-text {
+			@extend %_share;
+			opacity: 0.8;
+			letter-spacing: 0;
+			line-height: 1.4;
+		}
+
+		&-date {
+			@extend %_share;
+			color: rgba(colors.$complement, 0.8);
+			font-size: 0.9rem;
+			font-weight: 500;
+		}
+	}
+}

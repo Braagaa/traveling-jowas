@@ -1,0 +1,42 @@
+@use '../base/colors';
+@use '../base/mixins';
+@use '../base/placeholders';
+
+#footer {
+	margin-top: 5rem;
+	padding: 3rem 0;
+	background: colors.$main-color;
+}
+
+.footer {
+	&-inner {
+		@extend %middle;
+		padding: 0 1.3rem;
+		max-width: 93rem;
+
+		@include mixins.breakpoint('medium') {
+			padding: 0 2rem;
+		}
+
+		@include mixins.breakpoint('x-large') {
+			padding: 0 4rem;
+		}
+	}
+
+	&-section {
+		margin-top: 1.5rem;
+	}
+
+	&-logo {
+		width: 300px;
+		display: block;
+
+		img {
+			width: 100%;
+		}
+	}
+
+	&-copyright {
+		color: colors.$white;
+	}
+}

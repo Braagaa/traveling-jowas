@@ -1,0 +1,45 @@
+@use '../base/mixins';
+
+.feed {
+	display: flex;
+	flex-direction: column;
+	margin-top: 5.5rem;
+
+	&-post {
+		width: 100%;
+		transform: scale(1);
+		transition: transform ease-in 0.1s;
+
+		img {
+			width: 100%;
+		}
+
+		&:hover {
+			@include mixins.breakpoint('medium') {
+				transform: scale(1.05);
+			}
+		}
+
+		@include mixins.breakpoint('medium') {
+			flex: 1 0 33.33%;
+			padding: 10px;
+		}
+
+		@include mixins.breakpoint('large') {
+			flex: 1 0 16.66%;
+		}
+	}
+
+	&-post:not(:last-child) {
+		margin-bottom: 20px;
+		
+		@include mixins.breakpoint('medium') {
+			margin-bottom: 0;
+		}
+	}
+
+	@include mixins.breakpoint('medium') {
+		flex-direction: row;
+		flex-wrap: wrap;
+	}
+}

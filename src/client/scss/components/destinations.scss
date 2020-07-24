@@ -1,0 +1,35 @@
+@use '../base/placeholders';
+@use '../base/mixins';
+
+.destinations {
+	@extend %WH100auto;
+	@extend %middle;
+	max-width: 1200px;
+
+	&-list {
+		
+	}
+
+	li {
+		@include mixins.excludeFirst() {
+			margin-top: 0.5rem;
+		}
+	}
+}
+
+.destination {
+	position: relative;
+	display: block;
+
+	@include mixins.beforeImage(33%);
+
+	&-image {
+		@extend %fullFill;
+	}
+
+	&-image img {
+		@extend %fullFill;
+		object-fit: cover;
+		border-radius: 5px;
+	}
+}

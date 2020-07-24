@@ -1,0 +1,9 @@
+@use '../base/placeholders';
+
+.landing {
+	@extend %WH100auto;
+
+	&-inner {
+		@extend %inner;
+	}
+}

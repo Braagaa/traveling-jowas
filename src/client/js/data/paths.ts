@@ -1,5 +1,5 @@
 const PATHS = [
-	["DESTINATIONS", "/"],
+	["DESTINATIONS", "/destinations"],
 	["TRAVEL", "/"],
 	["SERVICES", "/"],
 	["VIDEOS", "/"],

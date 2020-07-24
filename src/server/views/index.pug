@@ -1,4 +1,24 @@
 extends layout.pug
 
+include mixins/post.pug
+
 block content
-	h1 HELLO
+	div.main
+		div.hero
+			div.hero-inner
+				img(
+					src="/assets/images/hero.jpg"
+					alt="The hero image of the home page."
+				)
+				div.hero-inner-caption
+					a(href="/") Here she blows
+		div.posts
+			h2.title New Entries
+			hr.seperator
+			div.posts-inner
+				div.posts-wrap
+					ul.posts-list
+						// Dummy data
+						+post("/", "small_hero.jpg", "10 breath-taking reasons to visit the Italian Alps", "Jagged mountains, picture-perfect towns, and emerald lakes make the Italian Alps an ideal destination. Here are the best places to visit.", "July 12, 2020")
+						+post("/", "small_hero.jpg", "10 breath-taking reasons to visit the Italian Alps", "Jagged mountains, picture-perfect towns, and emerald lakes make the Italian Alps an ideal destination. Here are the best places to visit.", "July 12, 2020")
+						+post("/", "small_hero.jpg", "10 breath-taking reasons to visit the Italian Alps", "Jagged mountains, picture-perfect towns, and emerald lakes make the Italian Alps an ideal destination. Here are the best places to visit.", "July 12, 2020")

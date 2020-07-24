@@ -1,0 +1,27 @@
+@use '../base/vars';
+@use '../base/colors';
+@use '../base/mixins';
+
+.seperator {
+	width: 90px;
+	border-color: colors.$light-grey;
+	margin: 27px auto 0;
+	opacity: 0.3;
+	border-top-width: 2px;
+
+	@include mixins.breakpoint('large') {
+		width: 500px;
+		margin-bottom: 20px;
+	}
+}
+
+.no-hero {
+	margin-top: calc(#{vars.$header-height} + 4.5rem);
+}
+
+.title {
+	text-align: center;
+	text-transform: uppercase;
+	font-weight: 100;
+	color: colors.$black-text;
+}

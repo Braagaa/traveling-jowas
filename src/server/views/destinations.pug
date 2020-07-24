@@ -1,0 +1,14 @@
+extends layout.pug
+
+include mixins/destination.pug
+
+block content
+	main.main(class="no-hero")
+		div.landing
+			h2.title Destinations
+			hr.seperator
+			div.landing-inner
+				div.destinations
+					ul.destinations-list
+						+destination("/", "destination.jpg")
+						+destination("/", "destination.jpg")

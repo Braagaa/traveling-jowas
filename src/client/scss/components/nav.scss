@@ -3,14 +3,15 @@
 
 .nav {
 	display: none;
+	margin-left: 3rem;
 
 	li {
 		display: inline-block;
 		position: relative;
-	}
 
-	@include mixins.excludeFirst(li) {
-		margin-left: 2rem;
+		@include mixins.excludeFirst() {
+			margin-left: 2rem;
+		}
 	}
 
 	a {

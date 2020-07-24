@@ -1,0 +1,26 @@
+@use '../base/colors';
+
+.button-main {
+	width: 200px;
+	height: 60px;
+	border: 2px solid colors.$main-color;
+	border-radius: 40px;
+	background: transparent;
+	color: colors.$main-color;
+	font-size: 1.2rem;
+	text-transform: uppercase;
+	cursor: pointer;
+
+	transition: all 0.3s;
+
+	&:hover {
+		background: colors.$main-color;
+		color: colors.$white;
+	}
+}
+
+.button-loading {
+	background: colors.$main-color;
+	color: colors.$white;
+	border-radius: 0;
+}

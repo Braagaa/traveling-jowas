@@ -1,0 +1,41 @@
+@use '../base/colors';
+@use '../base/placeholders';
+@use '../base/mixins';
+
+.hero {
+	background: colors.$grey;
+	height: 47rem;
+	width: 100%;
+	position: relative;
+	margin-bottom: 4.5rem;
+
+	&-inner {
+		@extend %fullFill;
+		overflow: hidden;
+
+		img {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+		}
+
+		&-caption {
+			@include mixins.position(absolute, $b: 0, $r: 0);
+			padding-right: 2rem;
+			padding-bottom: 2rem;
+
+			@include mixins.breakpoint('large') {
+				padding-right: 5rem;
+				padding-bottom: 3rem;
+			}
+
+			a {
+				font-weight: 500;
+				font-size: 1.5rem;
+				color: colors.$white;
+				text-transform: uppercase;
+			}
+		}
+	}
+}

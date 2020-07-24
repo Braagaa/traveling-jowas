@@ -1,8 +1,13 @@
+@use 'sass:color';
+
 $purple: darkorchid;
 $green: limegreen;
 $white: #fff;
 $very-light-white: rgba(255, 255, 255, 0.2);
 $black: #323232;
 $black-text: #303133;
+$grey: dimgray;
+$light-grey: #eaeaea;
 
 $main-color: $green;
+$complement: color.complement($main-color);

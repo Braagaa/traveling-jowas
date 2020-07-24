@@ -1,27 +1,39 @@
 @use './vars';
+@use './colors';
 
 * {
 	box-sizing: border-box;
 }
 
 body {
+	color: colors.$black-text;
 	height: 100%;
 	font-family: vars.$roboto;
 	font-size: 1rem;
 	letter-spacing: 1px;
 }
 
-ul {
-	margin: 0;
-	padding: 0;
-}
-
 li {
 	list-style-type: none;
-	padding: 0;
-	margin: 0;
 }
 
 a {
 	text-decoration: none;
+}
+
+body, p, h2, h3, h4, ul, li {
+	margin: 0;
+}
+
+ul, li, button {
+	padding: 0;
+}
+
+button {
+	border: none;
+	outline: none;
+}
+
+main {
+	min-height: 100vh;
 }

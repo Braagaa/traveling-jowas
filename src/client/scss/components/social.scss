@@ -11,10 +11,10 @@
 
 	li {
 		display: inline-block;
-	}
 
-	@include mixins.excludeFirst(li) {
-		margin-left: 0.6rem;
+		@include mixins.excludeFirst() {
+			margin-left: 0.6rem;
+		}
 	}
 
 	a {

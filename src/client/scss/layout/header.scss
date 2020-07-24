@@ -2,7 +2,7 @@
 @use '../base/colors';
 @use '../base/vars';
 
-%center {
+%_center {
 	display: flex;
 	align-items: center;
 }
@@ -16,7 +16,7 @@
 	z-index: 100;
 
 	&-inner {
-		@extend %center;
+		@extend %_center;
 		@include mixins.container(100%, 100%);
 		padding: 0 1rem;
 		justify-content: space-between;
@@ -31,6 +31,6 @@
 	}
 
 	&-section {
-		@extend %center;
+		@extend %_center;
 	}
 }

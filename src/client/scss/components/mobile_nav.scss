@@ -1,9 +1,10 @@
 @use '../base/mixins' as *;
+@use '../base/placeholders';
 @use '../base/vars';
 @use '../base/colors';
 
 .mobile-nav {
-	@include container(100%, 100%);
+	@extend %WH100;
 	@include position(fixed, $t: 0, $l: 0);
 	visibility: hidden;
 	transform: scale(0);
@@ -19,12 +20,12 @@
 	}
 
 	&-inner {
-		@include container(100%, 100%);
+		@extend %WH100;
 		padding-top: vars.$header-height;
 	}
 
 	&-list {
-		@include container(100%, 100%);
+		@extend %WH100;
 		display: flex;
 		flex-direction: column;
 		background: colors.$main-color;
@@ -40,9 +41,8 @@
 		font-size: 1.2rem;
 		font-weight: bold;
 		color: colors.$white;
-		@include center();
-		height: 100%;
-		width: 100%;
+		@extend %center;
+		@extend %WH100;
 
 		transition: all 0.15s linear; 
 
