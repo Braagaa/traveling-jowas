@@ -1,11 +1,17 @@
 import React from 'react';
+import Dropdown from './Dropdown';
 
-import PATHS from '../data/paths';
+import PATHS, {Path} from '../data/paths';
 
-const createItem = function([text, path]: string[]) {
+const createItem = function({text, link, links}: Path) {
 	return (
 		<li key={`nav-${text}`}>
-			<a href={path}>{text}</a>
+			<a href={link}>{text}</a>
+			{
+				links.length > 0 ? (
+					<Dropdown links={links}/>
+				) : null
+			}
 		</li>
 	);
 }

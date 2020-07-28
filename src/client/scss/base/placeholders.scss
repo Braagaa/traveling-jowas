@@ -21,6 +21,11 @@
 	opacity: 0;
 }
 
+%appear {
+	visibility: visible;
+	opacity: 1;
+}
+
 %WH100 {
 	width: 100%;
 	height: 100%;
@@ -59,4 +64,17 @@
 		padding-left: 70px;
 		padding-right: 70px;
 	}
+}
+
+//typography
+%common_text {
+	margin-top: 1.5rem;
+	line-height: 1.50;
+	color: colors.$black-text;
+	opacity: 0.9;
+	font-size: 0.9rem;
+}
+
+%start_margin {
+	margin-top: 4rem;
 }

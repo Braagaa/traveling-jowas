@@ -1,5 +1,6 @@
 @use '../base/mixins';
 @use '../base/colors';
+@use '../base/placeholders';
 
 .nav {
 	display: none;
@@ -11,6 +12,10 @@
 
 		@include mixins.excludeFirst() {
 			margin-left: 2rem;
+		}
+
+		&:hover .dropdown {
+			@extend %appear;
 		}
 	}
 

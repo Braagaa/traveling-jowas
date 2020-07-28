@@ -1,0 +1,19 @@
+@use '../base/placeholders';
+@use '../base/mixins';
+
+.about {
+	@extend %WH100auto;
+
+	&-inner {
+		@extend %inner;
+		max-width: 900px;
+		margin: 0 auto;
+	}
+
+	&-content {
+		@extend %start_margin;
+		p {
+			@extend %common_text;
+		}	
+	}
+}

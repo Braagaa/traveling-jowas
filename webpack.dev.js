@@ -33,7 +33,12 @@ module.exports = merge(common, {
 			filename: 'listings',
 			template: './src/server/views/listings.pug',
 			chunks: ["listings"]
-		})
+		}),
+		new HtmlWebpackPlugin({
+			filename: 'about',
+			template: './src/server/views/about.pug',
+			chunks: ["app"]
+		}),
 	],
 	module: {
 		rules: [

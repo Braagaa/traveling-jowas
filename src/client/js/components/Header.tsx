@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import {activeClass} from '../util/fn';
 import HamburgerMenu from './HamburgerMenu';
 import MobileMenu from './MobileMenu';
 import Nav from './Nav';
@@ -6,10 +7,11 @@ import Socials from './Socials';
 
 const Header = function() {
 	const [isOpen, setIsOpen] = useState(false);
+	const className = activeClass(isOpen, 'header');
 
 	return(
 		<React.Fragment>
-			<header className="header">
+			<header className={className}>
 				<div className="header-inner">
 					<div className="header-section">
 						<div className="logo">

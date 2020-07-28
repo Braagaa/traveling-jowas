@@ -18,7 +18,7 @@
 	&-inner {
 		@extend %_center;
 		@include mixins.container(100%, 100%);
-		padding: 0 1rem;
+		padding: 0 1em;
 		justify-content: space-between;
 
 		@include mixins.breakpoint('medium') {
@@ -32,5 +32,9 @@
 
 	&-section {
 		@extend %_center;
+	}
+
+	&-active {
+		box-shadow: none;
 	}
 }

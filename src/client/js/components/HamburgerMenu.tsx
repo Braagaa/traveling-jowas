@@ -1,4 +1,5 @@
 import React, {Dispatch, SetStateAction} from 'react';
+import {activeClass} from '../util/fn';
 
 interface Props {
 	isActive: boolean;
@@ -9,8 +10,7 @@ const Hamburger = function({isActive, setIsActive}: Props) {
 	const onClick = () => {
 		setIsActive(!isActive);
 	};
-
-	const activeCSS = !isActive ? 'hamburger' : 'hamburger hamburger-active';
+	const activeCSS = activeClass(isActive, 'hamburger');
 
 	return (
 		<div onClick={onClick} className={`${activeCSS}`}>

@@ -1,5 +1,6 @@
 import React from 'react';
 import Item from './MobileMenuItem';
+import {activeClass} from '../util/fn';
 
 import PATHS from '../data/paths';
 
@@ -8,17 +9,19 @@ interface Props {
 }
 
 const MobileMenu = function({isActive}: Props) {
-	const activeCSS = isActive ? 'mobile-nav mobile-nav-active' : 'mobile-nav';
+	const activeCSS = activeClass(isActive, 'mobile-nav');
 
 	return (
 		<div className={activeCSS}>
 			<div className="mobile-nav-inner">
 				<ul className="mobile-nav-list">
 					{
-						PATHS.map(([text, link]) => <Item
+						PATHS.map(({text, link, links}) => <Item
 							key={text}
 							text={text}
 							link={link}
+							links={links}
+							isOpen={isActive}
 						/>)
 					}
 				</ul>

@@ -4,19 +4,16 @@
 @use '../base/colors';
 
 .mobile-nav {
-	@extend %WH100;
 	@include position(fixed, $t: 0, $l: 0);
-	visibility: hidden;
-	transform: scale(0);
+	@extend %fullFill;
+	@extend %hide;
 	will-change: opacity,visibility,transform;
 	z-index: 90;
 
-	transition: visibility ease-in .3s,
-		transform .3s ease-out;
+	transition: all ease-in .3s;
 
 	&-active {
-		visibility: visible;
-		transform: scale(1);
+		@extend %appear;
 	}
 
 	&-inner {
@@ -26,29 +23,47 @@
 
 	&-list {
 		@extend %WH100;
+		@extend %center;
+		box-shadow: vars.$header-shadow;
 		display: flex;
 		flex-direction: column;
-		background: colors.$main-color;
+		background: colors.$white;
 	}
 
 	&-item {
 		width: 100%;
-		flex: 1 1 auto;
-		border-bottom: 1px solid colors.$very-light-white;
+		padding: 2px 8px;
+		display: flex;
+		flex-direction: column;
 	}
 
 	&-link {
-		font-size: 1.2rem;
-		font-weight: bold;
-		color: colors.$white;
 		@extend %center;
 		@extend %WH100;
+		font-size: 1.2rem;
+		color: colors.$black-text;
+		opacity: 0.8;
 
-		transition: all 0.15s linear; 
+		transition: all 0.1s linear; 
 
 		&:hover {
-			background: colors.$white;
 			color: colors.$main-color;
 		}
+	}
+
+	&-submenu {
+		margin: 0;
+		transform: scale(0);
+		height: 0;
+		@extend %hide;
+
+		transition: all 0.2s linear;
+	}
+
+	&-submenu-active {
+		@extend %appear;
+		height: 100%;
+		transform: scale(1);
+		margin: 1rem 0;
 	}
 }

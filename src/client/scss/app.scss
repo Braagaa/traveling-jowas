@@ -11,8 +11,13 @@
 @use 'components/destinations';
 @use 'components/listings';
 @use 'components/buttons';
+@use 'components/dropdown';
+
+//image presets
+@use 'components/strip';
 
 @use 'layout/header';
 @use 'layout/posts';
 @use 'layout/footer';
 @use 'layout/landing';
+@use 'layout/about';

@@ -1,0 +1,42 @@
+@use '../base/placeholders';
+@use '../base/colors';
+@use '../base/mixins';
+
+.dropdown {
+	position: absolute;
+	top: 200%;
+	left: 0;
+	width: 12rem;
+
+	@extend %hide;
+	will-change: opacity, visibility;
+	transition: 
+		opacity .15s ease-in,
+		visibility 0s .15s;
+
+	&-list {
+		background: colors.$white;
+		border: 1px solid colors.$light-grey;
+		width: 100%;
+
+		li {
+			display: block;
+			border-bottom: 1px solid colors.$light-grey;
+
+			@include mixins.excludeFirst() {
+				margin: 0;
+			}
+		}
+
+		a {
+			font-size: 0.8rem;
+			display: block;
+			width: 100%;
+			padding: 6px 16px;
+		}
+
+		a:hover::after {
+			transform: scale(0);
+		}
+	}
+}
