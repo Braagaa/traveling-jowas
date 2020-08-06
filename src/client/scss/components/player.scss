@@ -1,0 +1,34 @@
+@use '../base/mixins';
+@use '../base/placeholders';
+
+.player-wrapper {
+	display: block;
+	position: fixed;
+	left: 50%;
+	top: 57%;
+	transform: translate(-50%, -50%);
+	z-index: 80;
+
+	#player {
+		@extend %hide;
+		width: 0;
+		height: 0;
+	}
+}
+
+.player-active {
+	#player {
+		@extend %appear;
+		width: 500px;
+		height: 281px;
+		@include mixins.breakpoint('large') {
+			width: 784px;
+			height: 441px;
+		}
+
+		@include mixins.breakpoint('x-large') {
+			width: 784px;
+			height: 441px;
+		}
+	}
+}

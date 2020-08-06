@@ -15,21 +15,14 @@
 	}
 
 	&-list {
-		display: grid;
-		grid-template-columns: 1fr;
-		grid-row-gap: 4rem;
+		@include mixins.grid($gap: 4rem);
 		margin-bottom: 5rem;
 
-		@include mixins.breakpoint('large') {
-			grid-template-columns: repeat(2, 45%);
-			grid-gap: 5rem 1rem;
+		@include mixins.grid('large', 45%, 5rem 1rem) {
 			justify-content: center;
 		}
 
-		@include mixins.breakpoint('x-large') {
-			grid-template-columns: repeat(3, 1fr);
-			grid-gap: 5rem 1.2rem;
-		}
+		@include mixins.grid('x-large', 1fr, 5rem 1.2rem);
 	}
 
 	&-load {
@@ -56,18 +49,5 @@
 
 	&:hover img {
 		transform: scale(1.2) translate(5%, 5%);
-	}
-
-	&-title {
-		@extend %_share;
-		text-align: center;
-		color: colors.$main-color;
-		font-weight: 100;
-		text-transform: uppercase;
-	}
-
-	&-content {
-		@extend %_share;
-		@extend %content;
 	}
 }

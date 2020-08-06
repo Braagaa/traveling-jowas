@@ -1,0 +1,51 @@
+@use '../base/placeholders';
+@use '../base/mixins';
+@use '../base/colors';
+
+.videos {
+	@extend %WH100auto;
+
+	&-list {
+		@extend %WH100auto;
+		@include mixins.grid($gap: 4rem);
+		@include mixins.grid('large', 45%, 5rem 1rem) {
+			justify-content: center;
+		}
+		@include mixins.grid('x-large', 28%, 5rem 1.2rem);
+
+		li {
+			width: 100%;
+		}
+	}
+}
+
+.video {
+	cursor: pointer;
+
+	&-image {
+		position: relative;
+		display: block;
+
+		@include mixins.beforeImage(56.1%);
+
+		img {
+			@extend %fullFill;
+			object-fit: cover;
+		}
+
+		svg {
+			@extend %absoulteCenter;
+			transition: all 0.2s ease-in;
+			width: 20%;
+			height: 20%;
+			fill: colors.$white;
+			opacity: 0.7;
+		}
+
+	}
+
+	&:hover svg {
+		fill: colors.$main-color;
+		opacity: 1;
+	}
+}

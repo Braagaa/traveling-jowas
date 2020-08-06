@@ -1,0 +1,53 @@
+@use '../base/colors';
+@use '../base/mixins';
+@use '../base/placeholders';
+
+.contacts {
+	&-heading {
+		color: colors.$white;
+		line-height: 1.33;
+		font-weight: 100;
+		font-size: 1.1rem;
+		text-transform: uppercase;
+	}
+
+	li {
+		user-select: none;
+
+		@include mixins.excludeFirst() {
+			margin-top: 1.5rem;
+		}
+
+		@include mixins.breakpoint('large') {
+			display: inline-block;
+
+			@include mixins.excludeFirst() {
+				margin-top: 0;
+				margin-left: 6.4rem;
+			}
+		}
+	}
+
+	a {
+		color: colors.$white;
+		line-height: 1.75;
+		letter-spacing: -0.01em;
+		position: relative;
+	}
+
+	a:before {
+		@extend %WH100;
+		@extend %hide;
+		position: absolute;
+		border-bottom: 2px colors.$white solid;
+		padding-top: 5px;
+		content: '';
+		transition: all 0.2s;
+		transform: translateX(-50%);
+	}
+
+	a:hover:before {
+		@extend %appear;
+		transform: translateX(0%);
+	}
+}

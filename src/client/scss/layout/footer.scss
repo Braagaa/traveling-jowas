@@ -36,6 +36,16 @@
 		}
 	}
 
+	&-heading {
+		color: colors.$white;
+		font-size: 1.3rem;
+		font-weight: 100;
+		text-transform: uppercase;
+		line-height: 1.24;
+		letter-spacing: .02em;
+		margin-bottom: 1.5rem;
+	}
+
 	&-copyright {
 		color: colors.$white;
 	}

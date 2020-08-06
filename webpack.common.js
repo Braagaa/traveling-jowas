@@ -8,6 +8,10 @@ module.exports = {
 			'./src/client/js/header.tsx', 
 			'./src/client/js/listings.tsx'
 		],
+		videos: [
+			'./src/client/js/header.tsx', 
+			'./src/client/js/videos.tsx'
+		],
 		vendor: ["react", "react-dom"]
 	},
 	resolve: {

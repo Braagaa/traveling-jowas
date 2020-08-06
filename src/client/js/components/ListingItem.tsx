@@ -15,8 +15,8 @@ const Item = function({id, title, text, imageURL}: Listing) {
 					<div className="listing-image">
 						<img src={imageURL}/>
 					</div>
-					<h3 className="listing-title">{title}</h3>
-					<div className="listing-content">{text}</div>
+					<h3 className="tout-title">{title}</h3>
+					<div className="tout-content">{text}</div>
 				</a>
 			</div>
 		</li>

@@ -1,0 +1,14 @@
+@use '../base/placeholders';
+@use '../base/colors';
+
+.overlay {
+	@extend %fullscreen;
+	@extend %hide;
+	z-index: 10;
+	transition: all 0.2s ease;
+
+	&-active {
+		@extend %appear;
+		background: colors.$black-dim;
+	}
+}

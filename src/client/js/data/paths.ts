@@ -15,8 +15,8 @@ const travelPath: Path[] = [
 const PATHS: Path[] = [
 	createPath("DESTINATIONS", "/destinations"),
 	createPath("TRAVEL", "/", travelPath),
-	createPath("SERVICES", "/"),
-	createPath("VIDEOS", "/"),
+	createPath("SERVICES", "/services"),
+	createPath("VIDEOS", "/videos"),
 	createPath("ABOUT", "/about"),
 ];
 

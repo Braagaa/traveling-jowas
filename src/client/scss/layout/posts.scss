@@ -22,19 +22,12 @@
 	}
 
 	&-list {
-		display: grid;
-		grid-template-columns: 1fr;
-		grid-row-gap: 2rem;
 		@extend %WH100auto;
 
-		@include mixins.breakpoint('large') {
-			grid-template-columns: repeat(2, 1fr);
-			grid-gap: 3rem 1rem;
-		}
-
-		@include mixins.breakpoint('x-large') {
+		@include mixins.grid($gap: 2rem);
+		@include mixins.grid('large', 1fr, 3rem 1rem);
+		@include mixins.grid('x-large', minmax(auto, 362px)) {
 			justify-content: center;
-			grid-template-columns: repeat(3, minmax(auto, 362px));
 		}
 	}
 

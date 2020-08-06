@@ -1,0 +1,21 @@
+@use '../base/colors';
+@use '../base/placeholders';
+
+%_share {
+	margin-top: 1.8rem;
+}
+
+.tout {
+	&-title {
+		@extend %_share;
+		text-align: center;
+		color: colors.$main-color;
+		font-weight: 100;
+		text-transform: uppercase;
+	}
+
+	&-content {
+		@extend %_share;
+		@extend %content;
+	}
+}

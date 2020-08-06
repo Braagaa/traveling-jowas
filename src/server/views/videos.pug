@@ -1,0 +1,12 @@
+extends layout.pug
+
+
+block content
+	- var videoIds = 'Ntc3KdZ0qI8,9FkZiw7Vs_Y,A3Upt3kja9Y,5rJYtpUzx6s';
+	main.no-hero
+		div.landing
+			h2.title Videos
+			hr.seperator
+			div.landing-inner
+				div.videos
+				div#data(data-videoids=videoIds)
