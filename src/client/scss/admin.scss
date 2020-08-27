@@ -1,0 +1,75 @@
+$p: var(--purple);
+
+header {
+	background: $p;
+
+	img {
+		height: 60px;
+	}
+}
+
+.sidebar {
+	position: fixed;
+	left: 0;
+	top: 0;
+	bottom: 0;
+	padding-top: 80px;
+	z-index: 100;
+	background: $p;
+
+	.nav-link {
+		color: var(--white);
+
+		&:hover {
+			color: gold;
+		}
+	}
+
+	.nav-item .active {
+		color: gold;
+	}
+}
+
+.main {
+	max-width: 992px;
+}
+
+.bg-purple {
+	background: $p!important;
+}
+
+.text-purple {
+	color: $p!important;
+}
+
+.btn-outline-purple {
+	color: $p!important;
+	border: 1px solid $p!important;
+
+	&:hover {
+		background: $p!important;
+		color: var(--white)!important;
+	}
+}
+
+.purple {
+	background: $p;
+	color: var(--white);
+
+	&:hover {
+		color: gold;
+	}
+}
+
+//Table
+
+tr button {
+	opacity: 0;
+	visibility: hidden;
+}
+
+tr:hover button {
+	visibility: visible;
+	transition: all 0.15s linear;
+	opacity: 1;
+}

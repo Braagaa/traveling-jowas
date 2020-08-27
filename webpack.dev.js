@@ -48,6 +48,11 @@ module.exports = merge(common, {
 			filename: 'videos',
 			template: './src/server/views/videos.pug',
 			chunks: ["videos"]
+		}),
+		new HtmlWebpackPlugin({
+			filename: 'admin',
+			template: './src/server/views/admin/index.pug',
+			chunks: ["admin"]
 		})
 	],
 	module: {

@@ -8,13 +8,11 @@ export default gql`
 
 	extend type Mutation {
 		createCategory(name: String!): Category
-		addPosts(id: String!, posts: [String] = []): Category
-		removeCategory(id: String!): Boolean
+		removeCategory(id: String!): Category
 	}
 
 	type Category {
 		id: ID!
 		name: String!
-		posts: [Post]!
 	}
 `;

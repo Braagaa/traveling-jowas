@@ -12,7 +12,10 @@ module.exports = {
 			'./src/client/js/header.tsx', 
 			'./src/client/js/videos.tsx'
 		],
-		vendor: ["react", "react-dom"]
+		admin: [
+			'./src/client/js/admin.tsx', 
+		],
+		vendor: ["react", "react-dom", "react-router-dom", "@apollo/client"]
 	},
 	resolve: {
 		extensions: [".ts", '.tsx', '.js']

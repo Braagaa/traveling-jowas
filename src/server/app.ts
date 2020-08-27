@@ -21,7 +21,11 @@ app.use('/assets', express.static(join(__dirname, 'assets')));
 const server = new ApolloServer({
 	typeDefs, 
 	resolvers,
-	context: {Category: models.Category, Post: models.Post}
+	context: {
+		Category: models.Category, 
+		Destination: models.Destination, 
+		Post: models.Post
+	}
 });
 server.applyMiddleware({app});
 

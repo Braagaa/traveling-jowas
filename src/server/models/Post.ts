@@ -5,8 +5,8 @@ export interface IPostDoc extends Document {
 	title: string;
 	date: string;
 	status: string;
-	tags: string[];
 	categories: Types.ObjectId[];
+	destination?: Types.ObjectId;
 	featuredImage?: {
 		name: string;
 		alt?: string;
@@ -20,8 +20,8 @@ export const postSchema: Schema = new Schema({
 	title: {type: String, required: true, unique: true},
 	date: {type: Date, default: Date.now},
 	status: {type: String, enum: ['DRAFT', 'PUBLISHED'], default: 'DRAFT'},
-	tags: [String],
 	categories: [{type: Schema.Types.ObjectId, ref: 'Category'}],
+	destination: Schema.Types.ObjectId,
 	featuredImage: {
 		name: String,
 		alt: String
@@ -31,29 +31,8 @@ export const postSchema: Schema = new Schema({
 	meta_description: String
 });
 
-/*
-	Fires 3 times for some reason may need to refactor if speed becomes an issue.
-	Maybe make it too a static method instead.
-*/
-postSchema.post<IPostDoc>('findOneAndUpdate', function(doc, next) {
-	return Category
-		.updateMany(
-			{'_id': {'$in': doc.categories}},
-			{'$addToSet': {posts: doc.id}},
-			{new: true}
-		)
-		.then(() => next())
-		.catch(err => next(err));
-});
+//TODO PUBLISHED status only availble if categories.length > 0 && destination !== NULL
 
-postSchema.post<IPostDoc>('findOneAndDelete', function(doc, next) {
-	return Category
-		.updateMany(
-			{'_id': {'$in': doc.categories}},
-			{'$pull': {posts: doc.id}}
-		)
-		.then(() => next())
-		.catch(err => next(err));
-});
+postSchema.index({destination: 1, categories: 1});
 
 export default model<IPostDoc>('Post', postSchema);

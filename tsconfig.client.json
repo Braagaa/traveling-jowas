@@ -4,8 +4,8 @@
 		"sourceMap": true,
 		"strict": true,
 		"target": "es5",
-		"module": "esnext",
+		"module": "commonjs",
 		"jsx": "react",
-		"esModuleInterop": true, 
+		"esModuleInterop": true
 	}
 }

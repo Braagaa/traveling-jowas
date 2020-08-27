@@ -2,6 +2,7 @@ import {gql} from 'apollo-server-express';
 
 import dateScalar from '../scalars/Date';
 import categoryTypes from './Category';
+import destinationTypes from './Destination';
 import postTypes from './Post';
 import imageTypes from './Image';
 
@@ -25,5 +26,6 @@ export default [
 	baseTypes,
 	imageTypes,
 	categoryTypes,
+	destinationTypes,
 	postTypes
 ];

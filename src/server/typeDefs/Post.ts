@@ -2,7 +2,6 @@ import {gql} from 'apollo-server-express';
 
 const postArgs = `
 	status: String
-	tags: [String]
 	categories: [String]
 	featuredImage: ImageInput
 	body: String
@@ -41,7 +40,6 @@ export default gql`
 		title: String!
 		date: Date!
 		status: String!
-		tags: [String]!
 		categories: [Category]!
 		featuredImage: Image
 		body: String
