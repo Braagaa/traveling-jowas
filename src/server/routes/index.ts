@@ -4,6 +4,7 @@ import about from './about';
 import destinations from './destinations';
 import travel from './travel';
 import videos from './videos';
+import images from './images';
 import admin from './admin';
 
 export {
@@ -12,5 +13,6 @@ export {
 	destinations,
 	travel,
 	videos,
+	images,
 	admin
 };

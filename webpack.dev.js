@@ -15,7 +15,8 @@ module.exports = merge(common, {
 		open: true,
 		proxy: {
 			'/graphql': 'http://localhost:3000',
-			'/assets': 'http://localhost:3000'
+			'/assets': 'http://localhost:3000',
+			'/images/upload': 'http://localhost:3000'
 		}
 	},
 	plugins: [

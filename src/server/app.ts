@@ -4,7 +4,7 @@ import {ApolloServer} from 'apollo-server-express';
 import {join} from 'path';
 import env from './env.config';
 import database from './database';
-import {home} from './routes/';
+import {home, images} from './routes/';
 
 import typeDefs from './typeDefs';
 import models from './models';
@@ -16,6 +16,7 @@ app.set('view engine', 'pug');
 app.set('views', join(__dirname, 'views'));
 
 app.use(cors());
+app.use('/images/upload', images);
 app.use('/assets', express.static(join(__dirname, 'assets')));
 
 const server = new ApolloServer({

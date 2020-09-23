@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 
 import Title from './Title';
 
@@ -7,6 +7,14 @@ const Images = function() {
 
 	const onChange = (e: React.ChangeEvent<HTMLInputElement>) => 
 		setFiles(e.target.files);
+
+	
+	useEffect(() => {
+		fetch('/images/upload/hero.jpg?w=30&h=30', {method: 'GET'})
+			.then(res => res.json())
+			.then(data => console.log(data))
+			.catch(err => console.error(err.message));
+	}, []);
 
 	return (
 		<div className="main mx-auto">
